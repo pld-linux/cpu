@@ -5,10 +5,10 @@ Version:	1.4.3
 Release:	1
 License:	GPL
 Group:		Applications/System
-URL:		http://cpu.sourceforge.net/
 Source0:	http://dl.sourceforge.net/cpu/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-DESTDIR.patch
 # Source0-md5:	2d128f82261967d41458800752bc943d
+URL:		http://cpu.sourceforge.net/
+Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -41,18 +41,21 @@ useradd/usermod/userdel, korzystaj±c z LDAP.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	docdir="../rpm-doc"
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_sbindir}/*
 %attr(755,root,root) %{_libdir}/libcpu*.so.*.*
-%verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/cpu.conf
-%doc AUTHORS ChangeLog NEWS README TODO
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/cpu.conf
 %{_mandir}/man?/*
