@@ -9,6 +9,9 @@ URL:		http://cpu.sourceforge.net/
 Source0:	http://dl.sourceforge.net/cpu/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-DESTDIR.patch
 # Source0-md5:	2d128f82261967d41458800752bc943d
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	openldap-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
