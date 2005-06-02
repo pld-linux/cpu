@@ -1,0 +1,27 @@
+--- cpu-1.4.3/doc/Makefile.am~	2003-09-16 23:43:09.000000000 +0000
++++ cpu-1.4.3/doc/Makefile.am	2005-06-01 23:26:45.890349976 +0000
+@@ -5,16 +5,16 @@
+ 	test.ldif
+ 
+ install-data-local:
+-	@if test -f $(sysconfdir)/cpu.conf ; then \
+-		echo "$@ will not overwrite existing $(sysconfdir)/cpu.conf"; \
++	@if test -f $(DESTDIR)$(sysconfdir)/cpu.conf ; then \
++		echo "$@ will not overwrite existing $(DESTDIR)$(sysconfdir)/cpu.conf"; \
+ 	else \
+-		$(mkinstalldirs) $(sysconfdir); \
+-		echo "$(INSTALL_DATA) cpu.conf $(sysconfdir)/cpu.conf"; \
+-		$(INSTALL_DATA) cpu.conf $(sysconfdir)/cpu.conf; \
++		$(mkinstalldirs) $(DESTDIR)$(sysconfdir); \
++		echo "$(INSTALL_DATA) cpu.conf $(DESTDIR)$(sysconfdir)/cpu.conf"; \
++		$(INSTALL_DATA) cpu.conf $(DESTDIR)$(sysconfdir)/cpu.conf; \
+ 	fi
+ 
+ uninstall-local:
+-	@if test -f $(sysconfdir)/cpu.conf ; then \
+-		echo "rm -f $(sysconfdir)/cpu.conf"; \
+-		$(RM) -f $(sysconfdir)/cpu.conf; \
++	@if test -f $(DESTDIR)$(sysconfdir)/cpu.conf ; then \
++		echo "rm -f $(DESTDIR)$(sysconfdir)/cpu.conf"; \
++		$(RM) -f $(DESTDIR)$(sysconfdir)/cpu.conf; \
+ 	fi
