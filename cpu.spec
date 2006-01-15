@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/cpu/%{name}-%{version}.tar.bz2
 # Source0-md5:	2d128f82261967d41458800752bc943d
 URL:		http://cpu.sourceforge.net/
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-lbflags.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -30,13 +31,16 @@ useradd/usermod/userdel, korzystaj±c z LDAP.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-ldap \
+	--with-cracklib
 %{__make}
 
 %install
