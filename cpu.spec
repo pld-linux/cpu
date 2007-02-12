@@ -1,5 +1,5 @@
 Summary:	Change Password Utility
-Summary(pl):	Narzêdzie do zmiany hase³
+Summary(pl.UTF-8):   NarzÄ™dzie do zmiany haseÅ‚
 Name:		cpu
 Version:	1.4.3
 Release:	1
@@ -23,10 +23,10 @@ the useradd/usermod/userdel utilities for administrators using an LDAP
 backend and wishing to have a suite of command line tools for doing
 the administration.
 
-%description -l pl
-CPU to narzêdzie do zarz±dzania u¿ytkownikami w LDAP, napisane w C i
-bazuj±ce na pw(8) z FreeBSD. Celem CPU jest zast±pienie narzêdzi
-useradd/usermod/userdel, korzystaj±c z LDAP.
+%description -l pl.UTF-8
+CPU to narzÄ™dzie do zarzÄ…dzania uÅ¼ytkownikami w LDAP, napisane w C i
+bazujÄ…ce na pw(8) z FreeBSD. Celem CPU jest zastÄ…pienie narzÄ™dzi
+useradd/usermod/userdel, korzystajÄ…c z LDAP.
 
 %prep
 %setup -q
