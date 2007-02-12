@@ -1,5 +1,5 @@
 Summary:	Change Password Utility
-Summary(pl.UTF-8):   Narzędzie do zmiany haseł
+Summary(pl.UTF-8):	Narzędzie do zmiany haseł
 Name:		cpu
 Version:	1.4.3
 Release:	1
